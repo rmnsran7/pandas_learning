@@ -20,9 +20,9 @@ def merge_csv_files(input_files, output_file):
 
         try:
             # Iterate over rows in the CSV files
-            for rows in list(zip(*readers)):
+            for reader in readers:
                 # Merge corresponding columns from each row
-                for line in rows:
+                for line in reader:
                     output_writer.writerow(line)
         finally:
             # Close the output file
@@ -37,4 +37,4 @@ def merge_csv_files(input_files, output_file):
 
 csv_file = "datasets/choclate protfolio project - 11.csv"
 output_file = "datasets/merged_file.csv"
-merge_csv_files([csv_file, csv_file], output_file)
+merge_csv_files([csv_file, csv_file, csv_file, csv_file, csv_file, csv_file], output_file)
